@@ -1,0 +1,23 @@
+.par{
+    color: white;
+}
+.x, .zero{
+    width: 30%;
+    border: 2px solid white;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.x > p{
+color: white;
+}
+.zero > p{
+    color: white;
+}
+.option-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

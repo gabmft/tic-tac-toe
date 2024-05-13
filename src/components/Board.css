@@ -1,0 +1,74 @@
+.header {
+    text-align: center;
+    color: white;
+}
+
+.container {}
+
+.board {
+    margin: auto;
+    margin-top: 100px;
+    padding: 5px;
+    width: 35%;
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.square_x {
+    aspect-ratio: 1 / 1;
+    background-color: rgb(8, 58, 58);
+    display: flex;
+    color: rgb(6, 185, 6);
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.cell {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+width: 100%;
+height: 100%;
+}
+
+p{
+    font-size: clamp(2.5rem, 8vw, 10rem)
+}
+
+.square_0 {
+    aspect-ratio: 1 / 1;
+    background-color: rgb(8, 58, 58);
+    display: flex;
+    color: yellow;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.winner {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    height: 3rem;
+    width: 50%;
+    color: white;
+}
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.reset {
+    font-size: 2rem;
+    color: red;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px grey;
+}
