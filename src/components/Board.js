@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './Board.css'
-import Chooseplayer from './Chooseplayer'
+
 
 
 const Board = () => {
@@ -50,31 +50,31 @@ const Board = () => {
         return false
     }
 
-function handleReset() {
-    setBoardArray(Array(9).fill(null))
-    setMoves(1)
-    setCurrentIndex(0)
-    setIsX(true)
-    
-}
+    function handleReset() {
+        setBoardArray(Array(9).fill(null))
+        setMoves(1)
+        setCurrentIndex(0)
+        setIsX(true)
+
+    }
     return (
         <>
-        
-        <h1 className="header">TIC TAC TOE</h1>
-        <h1 className="header">Player's {isX ? 'X' : '0'} TURN</h1>
-<div className="container">
-        <div className="board">
 
-            {boardArray.map((element, index) => {
-                return (<div className={(element === 'X') ? 'square_x' : 'square_0'} key={index} onClick={isWinner() === true ? null : () => handleClick(index)}><div className='cell'><p>{element}</p></div></div>)
-            })}
+            <h1 className="header">TIC TAC TOE</h1>
+            <h1 className="header">Player's {isX ? 'X' : '0'} TURN</h1>
+            <div className="container">
+                <div className="board">
+
+                    {boardArray.map((element, index) => {
+                        return (<div className={(element === 'X') ? 'square_x' : 'square_0'} key={index} onClick={isWinner() === true ? null : () => handleClick(index)}><div className='cell'><p>{element}</p></div></div>)
+                    })}
+                </div>
+                <div className="winner">{isWinner() === true ? <h1 className={boardArray[currentIndex] === 'X' ? 'winner_x' : 'winner_0'}>Winner is {boardArray[currentIndex]}</h1> : moves === 10 ? <h1>Draw</h1> : null}</div>
+                <div className="reset-container">
+                    <button type="reset" className='reset' onClick={() => handleReset()}>Reset</button>
+                </div>
             </div>
-            <div className="winner">{isWinner() === true ? <h1>Winner is {boardArray[currentIndex]}</h1> : moves === 10 ? <h1>Draw</h1> : null}</div>
-            <div className="reset-container">
-            <button type="reset" className='reset' onClick={() => handleReset()}>Reset</button>
-            </div>
-</div>
-    </>)
+        </>)
 }
 
 export default Board

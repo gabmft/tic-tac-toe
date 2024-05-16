@@ -8,8 +8,9 @@
 .board {
     margin: auto;
     margin-top: 100px;
+    margin-bottom: 40px;
     padding: 5px;
-    width: 35%;
+    width: 30%;
     aspect-ratio: 1/1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -24,6 +25,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .cell {
@@ -47,6 +49,7 @@ p{
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .winner {
@@ -56,10 +59,18 @@ p{
     justify-content: center;
     margin-top: 20px;
     height: 3rem;
-    width: 50%;
+    width: 80%;
     color: white;
+    font-size: 2rem;
 }
 
+.winner_x{
+    color: rgb(6, 185, 6);
+}
+
+.winner_0{
+    color: yellow;
+}
 .reset-container {
     display: flex;
     justify-content: center;
@@ -67,8 +78,29 @@ p{
 }
 
 .reset {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-top: 30px;
+    padding: 3px 20px;
     color: red;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px grey;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px grey;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .board{
+        width: 60%;
+    }
+    p{
+        font-size: clamp(3.5rem, 12vw, 14rem)
+    }
+    .board{
+        margin-top: 50px;
+    }
+    .winner{
+        font-size: 1.45rem;
+    }
+    .reset{
+        margin-top: 10px;
+    }
 }
