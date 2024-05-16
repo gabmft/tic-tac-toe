@@ -27,6 +27,7 @@ const Board = () => {
             setMoves(prev => prev + 1)
             setIsX(false)
             setCurrentIndex(index)
+            console.log(boardArray[currentIndex])
         }
         if (boardArray[index] === null && !isX) {
             boardArray[index] = '0'
@@ -42,10 +43,9 @@ const Board = () => {
         for (let i = 0; i < winnerArray.length; i++) {
             const [a, b, c] = winnerArray[i]
             if (boardArray[a] !== null && boardArray[a] === boardArray[b] && boardArray[a] === boardArray[c]) {
-                console.log(i)
                 return true
             }
-
+            console.log(boardArray[currentIndex])
         }
         return false
     }
@@ -61,7 +61,7 @@ const Board = () => {
         <>
 
             <h1 className="header">TIC TAC TOE</h1>
-            <h1 className="header">Player's {isX ? 'X' : '0'} TURN</h1>
+            <h1 className={(isX || boardArray[currentIndex] === null) ? 'header_x' : 'header_0'}>Player's {isX ? 'X' : '0'} TURN</h1>
             <div className="container">
                 <div className="board">
 
